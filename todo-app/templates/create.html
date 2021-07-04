@@ -1,0 +1,22 @@
+{% extends 'base.html' %} {% block body %}
+<form class="m-5" action="/" method="POST">
+    <div class="mb-3 pd-3">
+        <label for="name_person">記名者</label>
+        <input class="form-control" type="text" name="name_person" required>
+    </div>
+    <div class="mb-3 pd-3">
+        <label for="title">タイトル</label>
+        <input class="form-control" type="text" name="title">
+    </div>
+    <div class="mb-3 pd-3">
+        <label for="detail">詳細</label>
+        <input class="form-control" type="text" name="detail">
+    </div>
+    <div class="mb-3 pd-3">
+        <label for="due">期限</label>
+        <input type="date" name="due" required>
+    </div>
+    <a class="btn btn-outline-primary" href="/" role="button">戻る</a>
+    <button type="submit" class="btn btn-primary">作成</button>
+</form>
+{% endblock %}
