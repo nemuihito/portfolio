@@ -10,10 +10,10 @@ app = Flask(__name__)
 mail = Mail(app)
 CORS(app)
 
-app.config['MAIL_SERVER']='mail71.onamae.ne.jp'
+app.config['MAIL_SERVER']='**************'
 app.config['MAIL_PORT'] = 465
-app.config['MAIL_USERNAME'] = 'info@akaboir-mitsumori.com'
-app.config['MAIL_PASSWORD'] = '$sY5rEqS'
+app.config['MAIL_USERNAME'] = '*****@**************'
+app.config['MAIL_PASSWORD'] = '**********'
 app.config['MAIL_USE_TLS'] = False
 app.config['MAIL_USE_SSL'] = True
 mail = Mail(app)
@@ -44,7 +44,7 @@ def index():
         moving_street_address_ev = "有"
     else:
         moving_street_address_ev = "無"
-    msg = Message("{0} {1}様お見積りありがとうございます".format(request.form["last_name"], request.form["first_name"]), sender = 'info@akaboir-mitsumori.com', recipients = [request.form["mail_adress"]])
+    msg = Message("{0} {1}様お見積りありがとうございます".format(request.form["last_name"], request.form["first_name"]), sender = '*****************', recipients = [request.form["mail_adress"]])
     msg.html = ("このメールは{0} {1}({2} {3})様に送られています。<br>\
         以下の内容でお見積りを承りました。<br><br>\
             お客様の電話番号 {18} ※こちらに後日お電話させていただきます<br><br>\
@@ -61,12 +61,7 @@ def index():
                                                         引っ越し先住所<br>\
                                                             {13} {14}階 エレベーター{15}<br>\
                                                                 建物の形態 {17}<br><br>\
-                                                                    赤帽アイアール<br>\
-                                                                        代表者名  宮本 崇志<br>\
-                                                                            会社所在地  〒004-0866 札幌市清田区北野6条１丁目４－８<br>\
-                                                                                電話番号  011-886-8646<br>\
-                                                                                    FAX  	011-886-8655<br>\
-                                                                                        直通番号  090-3772-2627 (至急のご用件の場合はコチラ)".format(request.form["last_name"], request.form["first_name"],\
+                                                                    ".format(request.form["last_name"], request.form["first_name"],\
                                                                                             request.form["last_name_yomi"], request.form["first_name_yomi"],\
                                                                                                 request.form["item1_value"], request.form["item2_value"], request.form["total"],\
                                                                                                     nimotsu_str, request.form["item1_text"], item2_text, \
@@ -74,7 +69,7 @@ def index():
                                                                                                             request.form["moving_street_address"], request.form["moving_street_address_num"], moving_street_address_ev, \
                                                                                                                 request.form["build-name-old"], request.form["build-name-new"], \
                                                                                                                     request.form["tel_number"]))
-    msg2 = Message("{0} {1}様よりお見積りが届きました。".format(request.form["last_name"], request.form["first_name"]), sender = 'info@akaboir-mitsumori.com', recipients = ['info@akaboir-mitsumori.com'])
+    msg2 = Message("{0} {1}様よりお見積りが届きました。".format(request.form["last_name"], request.form["first_name"]), sender = '***********************', recipients = ['************************'])
     msg2.html = ("お客様氏名 {0} {1}({2} {3}) 様<br>\
         以下の内容でお見積りを承りました。<br><br>\
             お客様の電話番号 {18}<br><br>\
@@ -91,12 +86,7 @@ def index():
                                                         引っ越し先住所<br>\
                                                             {13} {14}階 エレベーター{15}<br>\
                                                                 建物の形態 {17}<br><br>\
-                                                                    赤帽アイアール<br>\
-                                                                        代表者名  宮本 崇志<br>\
-                                                                            会社所在地  〒004-0866 札幌市清田区北野6条１丁目４－８<br>\
-                                                                                電話番号  011-886-8646<br>\
-                                                                                    FAX  	011-886-8655<br>\
-                                                                                        直通番号  090-3772-2627 (至急のご用件の場合はコチラ)".format(request.form["last_name"], request.form["first_name"],\
+                                                                    ".format(request.form["last_name"], request.form["first_name"],\
                                                                                             request.form["last_name_yomi"], request.form["first_name_yomi"],\
                                                                                                 request.form["item1_value"], request.form["item2_value"], request.form["total"],\
                                                                                                     nimotsu_str, request.form["item1_text"], item2_text, \
